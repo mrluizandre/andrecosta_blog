@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+  <div class="post">
+    <h1><%= post.title %></h1>
+    <span>
+      <%= simple_format post.body %>
+    </span>
+  </div>
+<% end %>
