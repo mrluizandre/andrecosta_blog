@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:view, :show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /posts
   # GET /posts.json
   def index
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def show
   end
 
-  def views
+  def view
   end
 
   # GET /posts/new

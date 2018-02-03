@@ -1,8 +1,22 @@
-<% @posts.each do |post| %>
-  <div class="post">
-    <h1><%= post.title %></h1>
-    <span>
-      <%= simple_format post.body %>
-    </span>
+<div class="row">
+  <div class="col">
+
+    <div class="posts">
+      <div class="row">
+
+        <% @posts.each do |post| %>
+
+          <div class="col-6">
+            <div class="post">
+
+              <%= link_to post.title, blog_post_view_path(post), class: 'title' %>
+              Por <strong>Andre Costa</strong><em class="float-right"><%= post.created_at.strftime("%d %b %y") %></em>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
   </div>
-<% end %>
+</div>

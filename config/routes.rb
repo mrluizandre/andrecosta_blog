@@ -1,6 +1,7 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   get 'blog/home'
   get 'blog/contact'
+  get 'blog/post/:id', to: 'posts#view', as: 'blog_post_view'
 
   devise_for :users
   resources :posts

@@ -1,26 +1,24 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Posts</h1>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
+      <th>Posta</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
+        <td>
+          <span class="post-title"><%= post.title %></span>
+          <span class="post-body"><%= strip_tags(post.body).truncate(150) %></span>
         <td>
           <div class="btn-group">
-            <%= link_to 'Exibir', post, class: 'btn btn-light' %>
-            <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-light' %>
-            <%= link_to 'Excluir', post, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
+            <%= link_to 'Exibir', post, class: 'btn btn-light btn-sm' %>
+            <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-light btn-sm' %>
+            <%= link_to 'Excluir', post, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger btn-sm' %>
           </div>
         </td>
       </tr>
