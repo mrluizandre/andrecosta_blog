@@ -26,11 +26,13 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.3'
 gem 'simple_form', '~> 3.5'
-gem 'carrierwave', '~> 1.0'
 gem 'ckeditor', '~> 4.2', '>= 4.2.4'
 gem 'awesome_print', '~> 1.8'
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
