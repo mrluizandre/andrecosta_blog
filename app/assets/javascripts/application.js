@@ -10,7 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require ckeditor/init
+//= require ckeditor/plugins/widget/plugin
+//= require ckeditor/plugins/codesnippet/plugin
+//= require ckeditor/config
+//= require rails-ujs
 //= require turbolinks
 //= require_tree .

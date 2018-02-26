@@ -33,6 +33,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.3'
 gem 'simple_form', '~> 3.5'
-gem 'ckeditor', '~> 4.2', '>= 4.2.4'
 gem 'awesome_print', '~> 1.8'
+
+gem 'ckeditor', '~> 4.2', '>= 4.2.4'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'mini_magick', '~> 4.8'
