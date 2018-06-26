@@ -1,0 +1,29 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    form = document.querySelector("#form-phone");
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
+      abrir_whatsapp();
+    });
+  });
+  function abrir_whatsapp(e){
+    let phone = document.querySelector("#phone").value;
+    window.location = 'https://api.whatsapp.com/send?phone=55' + phone;
+  }
+</script>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Abrir Whatsapp com o número</h1>
+    <p><%= @phone %></p>
+
+   <form id="form-phone">
+    <div class="form-group">
+      <label for="email">Telefone:</label>
+      <input type="number" class="form-control" id="phone">
+    </div>
+    <button type="submit" class="btn btn-primary">Abrir</button>
+  </form>
+
+  </div>
+</div>
