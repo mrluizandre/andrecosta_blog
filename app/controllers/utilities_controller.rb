@@ -5,6 +5,5 @@ class UtilitiesController < ApplicationController
   end
 
   def whatsapp
-    @phone = params[:phone]
   end
 end
