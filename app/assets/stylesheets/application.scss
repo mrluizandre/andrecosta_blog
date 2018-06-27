@@ -14,12 +14,15 @@
  *= require_self
  */
 
+// Colors
+$blue: #47A8E9;
+
 *{
-  font-family: 'Lora', sans-serif;
+  font-family: 'Lato', sans-serif;
 
 }
  h1, h2, h3, h4, h5, h6{
-    /*font-family: 'Lato', sans-serif;*/
+    font-family: 'Lato', sans-serif;
  }
 
  // Sticky Footer
@@ -35,4 +38,15 @@ body {
 }
 .footer {
   flex-shrink: 0;
+}
+
+
+.top-bar{
+  background-color: $blue;
+  color: #ffffff;
+  height: 70px;
+  margin-bottom: 1em;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.35);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.35);
 }
