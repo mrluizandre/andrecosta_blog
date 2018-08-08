@@ -55,8 +55,6 @@
   // font-style: italic;
   font-size: 1.3em;
   color: #8d929b;
-  border-bottom: 3px solid #000;
-
 
   .intro {
     margin-bottom: .4em;
@@ -68,7 +66,9 @@
   }
 }
 
-
+.post-introduction, .post-content, .post-author-info{
+  border-bottom: 2px solid #E3E7EA;
+}
 .post-content{
   font-family: 'Lora', sans-serif;
   font-size: 1.25em;
@@ -88,24 +88,68 @@
     padding-top: .9em;
     padding-bottom: .3em;
   }
-  h3 {}
-  h4 {}
-  h5 {}
-  h6 {}
+  h3, h4, h5, h6{
+    padding-top: .6em;
+    padding-bottom: .2em;
+  }
 
   img{
     max-width: 100%;
   }
+
+  blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  blockquote p {
+    display: inline;
+  }
 }
 
-.post-title, .post-introduction, .post-content{
+.post-author-info{
+  padding-bottom: .75em;
+  margin-bottom: .75em;
+
+  img{
+    border-radius: 50%;
+  }
+
+  .bio{
+    color: #8d929b;
+  }
+
+}
+
+.post-title, .post-introduction, .post-content, .post-comments, .post-author-info{
   padding-left: 0;
   padding-right: 0;
 }
 
+
+@media (max-width: 576px) {
+  .post-content{
+    p{
+      font-size: 1.1rem;
+    }
+  }
+}
+
 pre {
-  background-color: #222222;
-  color: #eeeeee;
-  padding: 1em;
+  background-color: #23241F;
+  padding: .5em;
   border-radius: .4em;
+  font-size: 1rem;
 }

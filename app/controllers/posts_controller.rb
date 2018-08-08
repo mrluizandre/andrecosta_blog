@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:view, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:view]
+
+
+
+  layout 'blog_post', only: :view
   # GET /posts
   # GET /posts.json
   def index
