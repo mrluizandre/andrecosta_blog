@@ -30,9 +30,9 @@ $(document).ready(function(){
     scrollTop = $(window).scrollTop();
      // $('.counter').html(scrollTop);
 
-    if (scrollTop >= 70) {
+    if (scrollTop >= 1) {
       $('#top-bar').addClass('scrolled-nav');
-    } else if (scrollTop < 70) {
+    } else if (scrollTop < 1) {
       $('#top-bar').removeClass('scrolled-nav');
     }
 

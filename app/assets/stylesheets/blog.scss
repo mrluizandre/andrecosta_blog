@@ -9,7 +9,6 @@
     *{
       text-decoration: none;
     }
-    border-bottom: 1px solid #eee;
     padding-top: 1em;
     padding-bottom: 1em;
 
@@ -44,6 +43,10 @@
     }
   }
 
+}
+
+.img-top-post{
+  width: 100%;
 }
 
 .post-title{
@@ -95,6 +98,8 @@
 
   img{
     max-width: 100%;
+    margin-top: .75em;
+    margin-bottom: .75em;
   }
 
   blockquote {
