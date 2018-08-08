@@ -3,13 +3,13 @@
 
     <div class="posts-home">
       <div class="row">
-        <div class="col-8 posts-col">
+        <div class="col-9 posts-col">
           <% @posts.each do |post| %>
             <div class="post">
               <%= link_to blog_post_view_path(post) do %>
-                <div class="row post-info">
+<!--                 <div class="row post-info">
                   <div class="col-auto">
-                    <img src="https://placehold.it/55x55" alt="" class="img-fluid user-post-image">
+                    <%= image_tag 'avatar.png', class: 'img-fluid user-post-image' %>
                   </div>
                   <div class="col">
                     <span class="align-middle" style="display: inline;">
@@ -17,10 +17,10 @@
                       <span class="date"><%= post.created_at.strftime("%d %b %y") %> · <%= minutes_of_read post.body %> </span>
                     </span>
                   </div>
-                </div>
+                </div> -->
                 <div class="row">
                   <div class="col">
-                    <%= image_tag post.image, class: 'img-fluid post-image' %>
+                    <%= image_tag post.image.home_thumb, class: 'img-fluid post-image' %>
                   </div>
                 </div>
                 <div class="row">
@@ -32,7 +32,7 @@
             </div>
           <% end %>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <%= render 'shared/sidebar-home' %>
         </div>
       </div>

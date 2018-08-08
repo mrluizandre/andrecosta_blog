@@ -1,5 +1,5 @@
 set :branch, 'master'
-set :server_address, '142.93.86.30'
+set :server_address, '138.197.216.222'
 
 ask(:password, nil, echo: false)
 server fetch(:server_address), user: "deploy", roles: %w{app db web}

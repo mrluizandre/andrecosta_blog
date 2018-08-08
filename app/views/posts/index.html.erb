@@ -13,7 +13,7 @@
       <tr>
         <td>
           <span class="post-title"><%= post.title %></span>
-          <span class="post-body"><%= strip_tags(post.body).truncate(150) %></span>
+          <span class="post-body"><%= post.abstract.truncate(150) %></span>
         <td>
           <div class="btn-group">
             <%= link_to 'Exibir', post, class: 'btn btn-light btn-sm' %>

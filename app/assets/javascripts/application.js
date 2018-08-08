@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
 //= require ckeditor/init
 //= require ckeditor/plugins/widget/plugin
 //= require ckeditor/plugins/codesnippet/plugin
@@ -17,3 +19,20 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+  var scrollTop = 0;
+  $(window).scroll(function(){
+    scrollTop = $(window).scrollTop();
+     // $('.counter').html(scrollTop);
+
+    if (scrollTop >= 70) {
+      $('#top-bar').addClass('scrolled-nav');
+    } else if (scrollTop < 70) {
+      $('#top-bar').removeClass('scrolled-nav');
+    }
+
+  });
+
+});
