@@ -9,16 +9,22 @@
               <div class="col-sm-12 col-md-6">
                 <div class="post">
                   <%= link_to blog_post_view_path(post) do %>
-                        <div class="row">
-                          <div class="col">
-                            <%= image_tag post.image.home_thumb, class: 'img-fluid post-image' %>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col post-title">
-                            <%= post.title %>
-                          </div>
-                        </div>
+                    <div class="row">
+                      <div class="col">
+                        <%= image_tag post.image.home_thumb, class: 'img-fluid post-image' %>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 post-title">
+                        <%= post.title %>
+                      </div>
+                      <div class="col-12 post-tile-info">
+                        <%= l post.updated_at, format: "%d/%m/%Y ás %H:%M" %>
+                      </div>
+                      <div class="col-12 post-abstract">
+                        <%= post.abstract%>
+                      </div>
+                    </div>
                   <% end %>
                 </div>
               </div>

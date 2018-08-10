@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Andre Costa</title>
+    <title><%= @meta_title ? @meta_title : ApplicationController::BRAND_NAME %></title>
     <%= csrf_meta_tags %>
+
+    <% if @meta_description.present? %>
+    <meta name="description" content="<%= @meta_description %>">
+    <% end %>
 
     <!-- Boostrap -->
 <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->

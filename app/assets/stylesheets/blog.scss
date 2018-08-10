@@ -14,6 +14,19 @@
 
     .post-image{
       width: 100%;
+      -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      -ms-transition: all .3s ease;
+      transition: all .3s ease;
+    }
+
+    .post-image:hover{
+      -webkit-filter: brightness(80%);
+      -moz-filter: brightness(80%);
+      -ms-filter: brightness(80%);
+      -o-filter: brightness(80%);
+      filter: brightness(80%);
     }
 
     .user-post-image{
@@ -40,6 +53,20 @@
       font-size: 1.4em;
       margin-top: 1em;
       font-weight: bold;
+    }
+
+    .post-abstract, .post-tile-info{
+      color: #8d929b;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .post-abstract{
+      margin-top: .5em;
+    }
+
+    .post-tile-info{
+      margin-top: .5em;
+      font-size: .9rem;
     }
   }
 
@@ -121,6 +148,14 @@
 
   blockquote p {
     display: inline;
+  }
+
+  a{
+    color: #00a9ff;
+
+    &:hover{
+      color: #0098e5;
+    }
   }
 }
 

@@ -17,6 +17,8 @@ class PostsController < ApplicationController
   end
 
   def view
+    @meta_title = meta_title @post.title
+    @meta_description = @post.abstract
   end
 
   # GET /posts/new
