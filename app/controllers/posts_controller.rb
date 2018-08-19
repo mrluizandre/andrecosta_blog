@@ -17,8 +17,16 @@ class PostsController < ApplicationController
   end
 
   def view
+    puts "PASSOU 3".on_red
     @meta_title = meta_title @post.title
     @meta_description = @post.abstract
+    @og_properties = {
+      title: @meta_title,
+      type:  'website',
+      image: view_context.image_url(@post.image),  # this file should exist in /app/assets/images/logo.png
+      url: blog_post_view_url(@post)
+    }
+    puts "PASSOU 4".on_red
   end
 
   # GET /posts/new

@@ -109,6 +109,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    colorize (0.8.1)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     debug_inspector (0.0.3)
@@ -286,6 +287,7 @@ DEPENDENCIES
   ckeditor (~> 4.2, >= 4.2.4)
   cloudinary (~> 1.8, >= 1.8.3)
   coffee-rails (~> 4.2)
+  colorize
   devise (~> 4.3)
   friendly_id (~> 5.2, >= 5.2.4)
   jbuilder (~> 2.5)
