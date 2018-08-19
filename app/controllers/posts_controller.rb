@@ -24,7 +24,8 @@ class PostsController < ApplicationController
       title: @meta_title,
       type:  'website',
       image: view_context.image_url(@post.image),  # this file should exist in /app/assets/images/logo.png
-      url: blog_post_view_url(@post)
+      url: blog_post_view_url(@post),
+      description: @post.abstract
     }
     puts "PASSOU 4".on_red
   end
