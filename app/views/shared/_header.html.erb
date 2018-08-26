@@ -4,25 +4,20 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-<!--     <div class="collapse navbar-collapse" id="navbarNav">
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item <%= active_class posts_path %>">
-          <%= link_to 'Posts', posts_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item <%= active_class posts_path %>">
-          <%= link_to 'Rails', posts_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item <%= active_class posts_path %>">
-          <%= link_to 'Notícias', posts_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item <%= active_class posts_path %>">
-          <%= link_to 'Dicas e Tutoriais', posts_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item <%= active_class posts_path %>">
-          <%= link_to 'Contato', posts_path, class: "nav-link" %>
-        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item <%= active_class posts_path %>">
+            <%= link_to 'Posts', posts_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item <%= active_class categories_path %>">
+            <%= link_to 'Categories', categories_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
-    </div> -->
+    </div>
 <!--     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Procurar" id="navbar-search-input">
     </form> -->

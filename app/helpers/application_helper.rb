@@ -15,9 +15,7 @@ module ApplicationHelper
   end
 
   def meta_og_tags(properties = {})
-    puts "PASSOU 1".on_red
     return unless properties.is_a? Hash
-    puts "PASSOU 2".on_red
 
     tags = []
 
