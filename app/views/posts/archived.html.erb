@@ -4,8 +4,7 @@
   <thead>
     <tr>
       <th>Posts</th>
-      <th>Views</th>
-      <th></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -13,13 +12,8 @@
     <% @posts.each do |post| %>
       <tr>
         <td>
-          <span class="post-title">
-            <%= post.title %>
-            <span class="badge badge-<%= status_to_badge_class post.status %> float-right"><%= post.status.titleize %></span>
-          </span>
+          <span class="post-title"><%= post.title %></span>
           <span class="post-body"><%= post.abstract.truncate(150) %></span>
-        </td>
-        <td><%= post.views %></td>
         <td>
           <div class="btn-group">
             <%= link_to 'Exibir', post, class: 'btn btn-light btn-sm' %>

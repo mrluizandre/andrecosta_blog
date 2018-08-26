@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def meta_title(title)
      [title, BRAND_NAME].reject(&:empty?).join(' · ')
   end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
 end

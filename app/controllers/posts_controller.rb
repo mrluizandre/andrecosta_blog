@@ -8,7 +8,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order(updated_at: :desc)
+  end
+
+  def archived
+    @posts = Post.archived.order(updated_at: :desc)
   end
 
   # GET /posts/1
@@ -17,7 +21,8 @@ class PostsController < ApplicationController
   end
 
   def view
-    puts "PASSOU 3".on_red
+    not_found unless @post.published?
+
     @meta_title = meta_title @post.title
     @meta_description = @post.abstract
     @og_properties = {
@@ -27,7 +32,8 @@ class PostsController < ApplicationController
       url: blog_post_view_url(@post),
       description: @post.abstract
     }
-    puts "PASSOU 4".on_red
+
+    @post.increment!(:views)
   end
 
   # GET /posts/new
@@ -88,6 +94,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :image, :abstract)
+      params.require(:post).permit(:title, :body, :image, :abstract, :status)
     end
 end

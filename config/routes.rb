@@ -7,7 +7,11 @@
 
   get 'whatsapp', to: 'utilities#whatsapp', as: 'open_whatsapp_number'
   devise_for :users
-  resources :posts
+  resources :posts do
+    collection do
+      get :archived
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "blog#home"
 end
