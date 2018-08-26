@@ -4,6 +4,7 @@
     <div class="posts-home">
       <div class="row">
         <div class="col-12 posts-col">
+          <% if params[:tag] %><h1>#<%= params[:tag] %></h1><% end %>
           <div class="row">
             <% @posts.each do |post| %>
               <div class="col-sm-12 col-md-6">

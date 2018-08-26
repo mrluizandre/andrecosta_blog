@@ -4,6 +4,7 @@
   get 'blog/home'
   get 'blog/contact'
   get 'blog/post/:id', to: 'posts#view', as: 'blog_post_view'
+  get 'blog/tags/:tag', to: 'blog#home', as: :tag
 
 
   get 'whatsapp', to: 'utilities#whatsapp', as: 'open_whatsapp_number'

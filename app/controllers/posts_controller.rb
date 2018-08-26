@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    render :view
   end
 
   def view
@@ -94,6 +95,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :image, :abstract, :status, :category_id)
+      params.require(:post).permit(:title, :body, :image, :abstract, :status, :category_id, :tag_list)
     end
 end
