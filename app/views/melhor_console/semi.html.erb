@@ -1,0 +1,45 @@
+<style>
+  label {
+    display: block
+  }
+</style>
+<div class="row">
+  <div class="col-12">
+    <h1>O Melhor Console de todos os tempos - Semifinal</h1>
+    <%= simple_form_for @voto, :url => melhor_console_final_path, :method => :post do |f| %>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <h2>Semifinal 1</h2>
+            <%= f.input :semi_1, label: false, as: :radio_buttons, collection: [@voto.elim_nintendo, @voto.elim_sega], wrapper_html: {class: 'form-check'}, input_html: { class: 'form-check-input'} %>
+          </div>
+          <div class="col">
+            <h2>Semifinal 2</h2>
+            <%= f.input :semi_2, label: false, as: :radio_buttons, collection: [@voto.elim_sony, @voto.elim_microsoft], wrapper_html: {class: 'form-check'}, input_html: { class: 'form-check-input'} %>
+          </div>
+          <div class="col-12">
+            <hr>
+            <strong><%= @voto.elim_outros %></strong> 👈 ninguém se importa 😂
+            <hr>
+          </div>
+        </div>
+        <%= f.button :button, class: 'btn btn-primary' do %>
+          Avançar
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+    // When your page is ready, wire up these events
+    $(function () {
+        // When your submit button is clicked
+        $("form").submit(function (e) {
+            // If it is not checked, prevent the default behavior (your submit)
+            if (!$('input[name="melhor_console[semi_1]"]' ).is(':checked') || !$('input[name="melhor_console[semi_2]"]' ).is(':checked')) {
+                alert("Selecione pelo um console em cada semifinal!");
+                e.preventDefault();
+            }
+        });
+    });
+</script>

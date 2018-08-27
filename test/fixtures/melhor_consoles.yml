@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  elim_nintendo: MyString
+  elim_sega: MyString
+  elim_sony: MyString
+  elim_microsoft: MyString
+  elim_outros: MyString
+  semi_1: MyString
+  semi_2: MyString
+  final: MyString
+
+two:
+  elim_nintendo: MyString
+  elim_sega: MyString
+  elim_sony: MyString
+  elim_microsoft: MyString
+  elim_outros: MyString
+  semi_1: MyString
+  semi_2: MyString
+  final: MyString

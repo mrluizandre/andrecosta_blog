@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180826163026) do
+ActiveRecord::Schema.define(version: 20180827144559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 20180826163026) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "melhor_consoles", force: :cascade do |t|
+    t.string "elim_nintendo"
+    t.string "elim_sega"
+    t.string "elim_sony"
+    t.string "elim_microsoft"
+    t.string "elim_outros"
+    t.string "semi_1"
+    t.string "semi_2"
+    t.string "final"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|

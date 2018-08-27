@@ -1,4 +1,13 @@
   Rails.application.routes.draw do
+
+  #Votação melhor console 99vidas
+  get 'melhor_console/elim'
+  post 'melhor_console/semi'
+  post 'melhor_console/final'
+  post 'melhor_console/fim'
+  get 'melhor_console/resultados'
+  get 'melhor_console_99vidas', to: 'melhor_console#elim'
+
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
   get 'blog/home'

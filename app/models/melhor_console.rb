@@ -1,0 +1,2 @@
+class MelhorConsole < ApplicationRecord
+end

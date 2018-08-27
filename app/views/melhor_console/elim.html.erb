@@ -1,0 +1,57 @@
+<style>
+  label {
+    display: block
+  }
+</style>
+<div class="row">
+  <div class="col">
+    <h1>O Melhor Console de todos os tempos - Eliminatórias</h1>
+    <p>Votação inspirada no episódio 330 no 99vidas. <a href="http://99vidas.com.br/99vidas-330-o-melhor-videogame-da-historia/" target="_blank">Ouça aqui amigo gamer</a></p>
+    <%= simple_form_for @voto, :url => melhor_console_semi_path, :method => :post do |f| %>
+      <div class="form-group">
+
+        <div class="row">
+          <div class="col">
+            <h2>Nintendo</h2>
+            <%= f.input :elim_nintendo, label: false, as: :radio_buttons, collection: ['Nintendinho','Super Nintendo','Nintendo 64','Virtual Boy','Gamecube','Wii','Wii U','Switch','Gameboy','Gameboy Color','Gameboy Advance','Nintendo DS','Nintendo 3DS/2DS'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
+          </div>
+          <div class="col">
+          <h2>Sega</h2>
+          <%= f.input :elim_sega, label: false, as: :radio_buttons, collection: ['Master System','Mega Drive','Sega Saturn','Dreamcast','Game Gear','Sega Nomad'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
+          </div>
+          <div class="col">
+            <h2>Sony</h2>
+            <%= f.input :elim_sony, label: false, as: :radio_buttons, collection: ['Playstation 1','Playstation 2','Playstation 3','Playstation 4','PSP','PS Vita'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
+          </div>
+          <div class="col">
+            <h2>Microsoft</h2>
+            <%= f.input :elim_microsoft, label: false, as: :radio_buttons, collection: ['Xbox Original','Xbox 360','Xbox One / S / X'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
+          </div>
+          <div class="col">
+            <h2>Outros</h2>
+            <%= f.input :elim_outros, label: false, as: :radio_buttons, collection: ['Atari','TurboGrafx','Neo Geo','Phillips CDi','Jaguar','3DO','MSX'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
+          </div>
+        </div>
+
+        <%= f.button :button, class: 'btn btn-primary' do %>
+          Avançar
+        <% end %>
+        <%= link_to 'Só quero ver os rasultados', melhor_console_resultados_path, class: 'btn btn-secondary float-right' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+    // When your page is ready, wire up these events
+    $(function () {
+        // When your submit button is clicked
+        $("form").submit(function (e) {
+            // If it is not checked, prevent the default behavior (your submit)
+            if (!$('input[name="melhor_console[elim_nintendo]"]' ).is(':checked') || !$('input[name="melhor_console[elim_sega]"]' ).is(':checked') || !$('input[name="melhor_console[elim_sony]"]' ).is(':checked') || !$('input[name="melhor_console[elim_microsoft]"]' || !$('input[name="melhor_console[elim_outros]"]' ).is(':checked')).is(':checked')) {
+                alert("Selecione pelo um console de cada grupo!");
+                e.preventDefault();
+            }
+        });
+    });
+</script>

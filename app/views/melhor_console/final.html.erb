@@ -1,0 +1,32 @@
+<style>
+  label {
+    display: block
+  }
+</style>
+<div class="row">
+  <div class="col">
+    <h1>O Melhor Console de todos os tempos - Grande Final</h1>
+    <%= simple_form_for @voto, :url => melhor_console_fim_path, :method => :post do |f| %>
+      <div class="form-group">
+        <h2>Final</h2>
+        <%= f.input :final, label: false, as: :radio_buttons, collection: [@voto.semi_1, @voto.semi_2], wrapper_html: {class: 'form-check'}, input_html: { class: 'form-check-input'} %>
+        <%= f.button :button, class: 'btn btn-primary' do %>
+          Avançar
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+    // When your page is ready, wire up these events
+    $(function () {
+        // When your submit button is clicked
+        $("form").submit(function (e) {
+            // If it is not checked, prevent the default behavior (your submit)
+            if (!$('input[name="melhor_console[final]"]' ).is(':checked')) {
+                alert("Vai votar na final não mah?!");
+                e.preventDefault();
+            }
+        });
+    });
+</script>
