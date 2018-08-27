@@ -48,7 +48,7 @@
         // When your submit button is clicked
         $("form").submit(function (e) {
             // If it is not checked, prevent the default behavior (your submit)
-            if (!$('input[name="melhor_console[elim_nintendo]"]' ).is(':checked') || !$('input[name="melhor_console[elim_sega]"]' ).is(':checked') || !$('input[name="melhor_console[elim_sony]"]' ).is(':checked') || !$('input[name="melhor_console[elim_microsoft]"]' || !$('input[name="melhor_console[elim_outros]"]' ).is(':checked')).is(':checked')) {
+            if (!$('input[name="melhor_console[elim_nintendo]"]' ).is(':checked') || !$('input[name="melhor_console[elim_sega]"]' ).is(':checked') || !$('input[name="melhor_console[elim_sony]"]' ).is(':checked') || !$('input[name="melhor_console[elim_microsoft]"]').is(':checked') || !$('input[name="melhor_console[elim_outros]"]' ).is(':checked')) {
                 alert("Selecione pelo um console de cada grupo!");
                 e.preventDefault();
             }
