@@ -11,6 +11,7 @@
 
     <div class="row">
       <div class="col-12">
+        <hr>
         <h3>Campeão</h3>
         <%= pie_chart MelhorConsole.group(:final).count.tap{|x| x.delete(nil)} %>
       </div>
@@ -27,7 +28,7 @@
         <%= pie_chart MelhorConsole.group(:elim_sony).count.tap{|x| x.delete(nil)} %>
       </div>
       <div class="col-6">
-        <h3>Sega</h3>
+        <h3>Microsoft</h3>
         <%= pie_chart MelhorConsole.group(:elim_microsoft).count.tap{|x| x.delete(nil)} %>
       </div>
       <div class="col-6">
