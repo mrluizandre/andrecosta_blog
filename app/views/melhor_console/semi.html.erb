@@ -23,7 +23,7 @@
             <hr>
           </div>
         </div>
-        <%= f.button :button, class: 'btn btn-primary' do %>
+        <%= f.button :button, class: 'btn btn-primary', id: 'submit_button' do %>
           Avançar
         <% end %>
       </div>
@@ -33,12 +33,16 @@
 <script type="text/javascript">
     // When your page is ready, wire up these events
     $(function () {
+        $("#submit_button").prop("disabled",true);
+
         // When your submit button is clicked
-        $("form").submit(function (e) {
+        $('input[type=radio]').change(function() {
             // If it is not checked, prevent the default behavior (your submit)
-            if (!$('input[name="melhor_console[semi_1]"]' ).is(':checked') || !$('input[name="melhor_console[semi_2]"]' ).is(':checked')) {
-                alert("Selecione pelo um console em cada semifinal!");
-                e.preventDefault();
+            if ($('input[name="melhor_console[semi_1]"]' ).is(':checked') && $('input[name="melhor_console[semi_2]"]' ).is(':checked')) {
+
+              $("#submit_button").prop("disabled",false);
+                // alert("Selecione pelo um console de cada grupo!");
+                // e.preventDefault();
             }
         });
     });

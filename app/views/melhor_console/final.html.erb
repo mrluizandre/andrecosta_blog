@@ -10,7 +10,7 @@
       <div class="form-group">
         <h2>Final</h2>
         <%= f.input :final, label: false, as: :radio_buttons, collection: [@voto.semi_1, @voto.semi_2], wrapper_html: {class: 'form-check'}, input_html: { class: 'form-check-input'} %>
-        <%= f.button :button, class: 'btn btn-primary' do %>
+        <%= f.button :button, class: 'btn btn-primary', id: 'submit_button' do %>
           Avançar
         <% end %>
       </div>
@@ -20,12 +20,16 @@
 <script type="text/javascript">
     // When your page is ready, wire up these events
     $(function () {
+        $("#submit_button").prop("disabled",true);
+
         // When your submit button is clicked
-        $("form").submit(function (e) {
+        $('input[type=radio]').change(function() {
             // If it is not checked, prevent the default behavior (your submit)
-            if (!$('input[name="melhor_console[final]"]' ).is(':checked')) {
-                alert("Vai votar na final não mah?!");
-                e.preventDefault();
+            if($('input[name="melhor_console[final]"]' ).is(':checked')) {
+
+              $("#submit_button").prop("disabled",false);
+                // alert("Selecione pelo um console de cada grupo!");
+                // e.preventDefault();
             }
         });
     });
