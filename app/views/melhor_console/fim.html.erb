@@ -9,34 +9,7 @@
     <hr>
     <h2>Estatíticas</h2>
 
-    <div class="row">
-      <div class="col-12">
-        <hr>
-        <h3>Campeão</h3>
-        <%= pie_chart MelhorConsole.group(:final).count.tap{|x| x.delete(nil)} %>
-      </div>
-      <div class="col-6">
-        <h3>Nintendo</h3>
-        <%= pie_chart MelhorConsole.group(:elim_nintendo).count.tap{|x| x.delete(nil)} %>
-      </div>
-      <div class="col-6">
-        <h3>Sega</h3>
-        <%= pie_chart MelhorConsole.group(:elim_sega).count.tap{|x| x.delete(nil)} %>
-      </div>
-      <div class="col-6">
-        <h3>Sony</h3>
-        <%= pie_chart MelhorConsole.group(:elim_sony).count.tap{|x| x.delete(nil)} %>
-      </div>
-      <div class="col-6">
-        <h3>Microsoft</h3>
-        <%= pie_chart MelhorConsole.group(:elim_microsoft).count.tap{|x| x.delete(nil)} %>
-      </div>
-      <div class="col-6">
-        <h3>Outros</h3>
-        <%= pie_chart MelhorConsole.group(:elim_outros).count.tap{|x| x.delete(nil)} %>
-      </div>
-
-    </div>
+    <%= render 'resultado' %>
 
   </div>
 </div>

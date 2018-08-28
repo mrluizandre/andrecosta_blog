@@ -23,6 +23,6 @@ class MelhorConsoleController < ApplicationController
   end
 
   def resultados
-    puts MelhorConsole.group(:elim_microsoft).count.inspect.on_red
+    @total_votos = MelhorConsole.where.not(final: nil).count
   end
 end
