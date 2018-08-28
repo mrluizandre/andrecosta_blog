@@ -19,6 +19,7 @@ class MelhorConsoleController < ApplicationController
   def fim
     @voto = MelhorConsole.find(session[:voto_id])
     @voto.update(params.require(:melhor_console).permit(:final))
+    @total_votos = MelhorConsole.where.not(final: nil).count
     puts "#{@voto.inspect}".on_yellow
   end
 
