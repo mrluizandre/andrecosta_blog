@@ -9,15 +9,15 @@
     <%= simple_form_for @voto, :url => melhor_console_final_path, :method => :post do |f| %>
       <div class="form-group">
         <div class="row">
-          <div class="col">
+          <div class="col-sm-12 col-md-4">
             <h2>Semifinal 1</h2>
             <%= f.input :semi_1, label: false, as: :radio_buttons, collection: [@voto.elim_nintendo, @voto.elim_sega], wrapper_html: {class: 'form-check'}, input_html: { class: 'form-check-input'} %>
           </div>
-          <div class="col">
+          <div class="col-sm-12 col-md-4">
             <h2>Semifinal 2</h2>
             <%= f.input :semi_2, label: false, as: :radio_buttons, collection: [@voto.elim_sony, @voto.elim_microsoft], wrapper_html: {class: 'form-check'}, input_html: { class: 'form-check-input'} %>
           </div>
-          <div class="col-12">
+          <div class="col-sm-12">
             <hr>
             <strong><%= @voto.elim_outros %></strong> 👈 ninguém se importa 😂
             <hr>

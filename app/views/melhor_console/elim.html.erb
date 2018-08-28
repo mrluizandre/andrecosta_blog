@@ -12,23 +12,23 @@
       <div class="form-group">
 
         <div class="row">
-          <div class="col">
+          <div class="col-sm-12 col-md-4">
             <h2>Nintendo</h2>
             <%= f.input :elim_nintendo, label: false, as: :radio_buttons, collection: ['Nintendinho','Super Nintendo','Nintendo 64','Virtual Boy','Gamecube','Wii','Wii U','Switch','Gameboy','Gameboy Color','Gameboy Advance','Nintendo DS','Nintendo 3DS/2DS'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
           </div>
-          <div class="col">
+          <div class="col-sm-12 col-md-4">
           <h2>Sega</h2>
           <%= f.input :elim_sega, label: false, as: :radio_buttons, collection: ['Master System','Mega Drive','Sega Saturn','Dreamcast','Game Gear','Sega Nomad'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
           </div>
-          <div class="col">
+          <div class="col-sm-12 col-md-4">
             <h2>Sony</h2>
             <%= f.input :elim_sony, label: false, as: :radio_buttons, collection: ['Playstation 1','Playstation 2','Playstation 3','Playstation 4','PSP','PS Vita'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
           </div>
-          <div class="col">
+          <div class="col-sm-12 col-md-4">
             <h2>Microsoft</h2>
             <%= f.input :elim_microsoft, label: false, as: :radio_buttons, collection: ['Xbox Original','Xbox 360','Xbox One / S / X'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
           </div>
-          <div class="col">
+          <div class="col-sm-12 col-md-4">
             <h2>Outros</h2>
             <%= f.input :elim_outros, label: false, as: :radio_buttons, collection: ['Atari','TurboGrafx','Neo Geo','Phillips CDi','Jaguar','3DO','MSX', 'Console Híbrido'], wrapper_html: {class: 'form-check'}, input_html: { required: true, class: 'form-check-input'} %>
           </div>
