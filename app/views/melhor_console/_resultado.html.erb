@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-12">
     <h3>Campeão</h3>
+    <p><%= MelhorConsole.where.not(final: nil).count %> pessoas votaram</p>
     <div class="row">
       <div class="col-7">
         <%= pie_chart MelhorConsole.group(:final).count.tap{|x| x.delete(nil)} %>
@@ -15,6 +16,7 @@
     </div>
   </div>
   <div class="col-12">
+    <hr>
     <h3>Nintendo</h3>
     <div class="row">
       <div class="col-7">
@@ -30,6 +32,7 @@
     </div>
   </div>
   <div class="col-12">
+    <hr>
     <h3>Sega</h3>
     <div class="row">
       <div class="col-7">
@@ -45,6 +48,7 @@
     </div>
   </div>
   <div class="col-12">
+    <hr>
     <h3>Sony</h3>
     <div class="row">
       <div class="col-7">
@@ -60,6 +64,7 @@
     </div>
   </div>
   <div class="col-12">
+    <hr>
     <h3>Microsoft</h3>
     <div class="row">
       <div class="col-7">
@@ -75,6 +80,7 @@
     </div>
   </div>
   <div class="col-12">
+    <hr>
     <h3>Outros</h3>
     <div class="row">
       <div class="col-7">
