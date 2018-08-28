@@ -4,11 +4,11 @@
     <p><%= MelhorConsole.where.not(final: nil).count %> pessoas votaram</p>
     <div class="row">
       <div class="col-sm-12 col-md-7">
-        <%= pie_chart MelhorConsole.group(:final).count.tap{|x| x.delete(nil)} %>
+        <%= pie_chart MelhorConsole.where.not(final: nil).group(:final).count.tap{|x| x.delete(nil)} %>
       </div>
       <div class="col-sm-12 col-md-5">
         <ol>
-          <% MelhorConsole.group(:final).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
+          <% MelhorConsole.where.not(final: nil).group(:final).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
           <li><%= "#{c[0]}: #{(c[1].to_f/@total_votos*100.0).round(2)}%"%></li>
           <% end %>
         </ol>
@@ -20,12 +20,12 @@
     <h3>Nintendo</h3>
     <div class="row">
       <div class="col-sm-12 col-md-7">
-        <%= pie_chart MelhorConsole.group(:elim_nintendo).count.tap{|x| x.delete(nil)} %>
+        <%= pie_chart MelhorConsole.where.not(final: nil).group(:elim_nintendo).count.tap{|x| x.delete(nil)} %>
       </div>
       <div class="col-sm-12 col-md-5">
         <ol>
-          <% MelhorConsole.group(:elim_nintendo).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
-          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(elim_nintendo: nil).count*100.0).round(2)}%"%></li>
+          <% MelhorConsole.where.not(final: nil).group(:elim_nintendo).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
+          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(final: nil).where.not(elim_nintendo: nil).count*100.0).round(2)}%"%></li>
           <% end %>
         </ol>
       </div>
@@ -36,12 +36,12 @@
     <h3>Sega</h3>
     <div class="row">
       <div class="col-sm-12 col-md-7">
-        <%= pie_chart MelhorConsole.group(:elim_sega).count.tap{|x| x.delete(nil)} %>
+        <%= pie_chart MelhorConsole.where.not(final: nil).group(:elim_sega).count.tap{|x| x.delete(nil)} %>
       </div>
       <div class="col-sm-12 col-md-5">
         <ol>
-          <% MelhorConsole.group(:elim_sega).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
-          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(elim_sega: nil).count*100.0).round(2)}%"%></li>
+          <% MelhorConsole.where.not(final: nil).group(:elim_sega).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
+          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(final: nil).where.not(elim_sega: nil).count*100.0).round(2)}%"%></li>
           <% end %>
         </ol>
       </div>
@@ -52,12 +52,12 @@
     <h3>Sony</h3>
     <div class="row">
       <div class="col-sm-12 col-md-7">
-        <%= pie_chart MelhorConsole.group(:elim_sony).count.tap{|x| x.delete(nil)} %>
+        <%= pie_chart MelhorConsole.where.not(final: nil).group(:elim_sony).count.tap{|x| x.delete(nil)} %>
       </div>
       <div class="col-sm-12 col-md-5">
         <ol>
-          <% MelhorConsole.group(:elim_sony).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
-          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(elim_sony: nil).count*100.0).round(2)}%"%></li>
+          <% MelhorConsole.where.not(final: nil).group(:elim_sony).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
+          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(final: nil).where.not(elim_sony: nil).count*100.0).round(2)}%"%></li>
           <% end %>
         </ol>
       </div>
@@ -68,12 +68,12 @@
     <h3>Microsoft</h3>
     <div class="row">
       <div class="col-sm-12 col-md-7">
-        <%= pie_chart MelhorConsole.group(:elim_microsoft).count.tap{|x| x.delete(nil)} %>
+        <%= pie_chart MelhorConsole.where.not(final: nil).group(:elim_microsoft).count.tap{|x| x.delete(nil)} %>
       </div>
       <div class="col-sm-12 col-md-5">
         <ol>
-          <% MelhorConsole.group(:elim_microsoft).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
-          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(elim_microsoft: nil).count*100.0).round(2)}%"%></li>
+          <% MelhorConsole.where.not(final: nil).group(:elim_microsoft).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
+          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(final: nil).where.not(elim_microsoft: nil).count*100.0).round(2)}%"%></li>
           <% end %>
         </ol>
       </div>
@@ -84,12 +84,12 @@
     <h3>Outros</h3>
     <div class="row">
       <div class="col-sm-12 col-md-7">
-        <%= pie_chart MelhorConsole.group(:elim_outros).count.tap{|x| x.delete(nil)} %>
+        <%= pie_chart MelhorConsole.where.not(final: nil).group(:elim_outros).count.tap{|x| x.delete(nil)} %>
       </div>
       <div class="col-sm-12 col-md-5">
         <ol>
-          <% MelhorConsole.group(:elim_outros).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
-          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(elim_outros: nil).count*100.0).round(2)}%"%></li>
+          <% MelhorConsole.where.not(final: nil).group(:elim_outros).count.tap{|x| x.delete(nil)}.sort_by{|k,v| -v}.to_h.each do |c| %>
+          <li><%= "#{c[0]}: #{(c[1].to_f/MelhorConsole.where.not(final: nil).where.not(elim_outros: nil).count*100.0).round(2)}%"%></li>
           <% end %>
         </ol>
       </div>
