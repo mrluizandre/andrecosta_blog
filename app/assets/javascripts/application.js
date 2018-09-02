@@ -12,7 +12,6 @@
 //
 //= require Chart.bundle
 //= require chartkick
-//= require highlight_pack
 //= require jquery
 //= require jquery_ujs
 //= require popper
@@ -23,6 +22,7 @@
 //= require ckeditor/config
 //= require rails-ujs
 //= require turbolinks
+//= require highlightjs-turbolinks/lib/highlightjs-turbolinks.js
 //= require_tree .
 
 

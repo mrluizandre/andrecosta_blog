@@ -1,5 +1,7 @@
 {
   "name": "andrecosta_blog",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "highlightjs-turbolinks": "^1.0.4"
+  }
 }
