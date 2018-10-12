@@ -1,25 +1,21 @@
-# README
+# andrecosta.pro
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instalar dependências Ruby
 
-Things you may want to cover:
+`bundle install`
 
-* Ruby version
+Criar banco de dados
 
-* System dependencies
+`rails db:create`
 
-* Configuration
+Criar tabelas no banco de dados
 
-* Database creation
+`rails db:migrate`
 
-* Database initialization
+Inserir informações iniciais necessárias
 
-* How to run the test suite
+`rails db:seed`
 
-* Services (job queues, cache servers, search engines, etc.)
+Instalar dependências JS e CSS
 
-* Deployment instructions
-
-* ...
-# andrecosta_blog
+`npm install`
