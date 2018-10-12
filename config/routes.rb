@@ -17,6 +17,7 @@
 
 
   get 'whatsapp', to: 'utilities#whatsapp', as: 'open_whatsapp_number'
+  get 'mercadopago', to: 'utilities#mercadopago', as: 'mercadopago'
   devise_for :users
   resources :posts do
     collection do

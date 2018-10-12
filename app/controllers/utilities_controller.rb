@@ -6,4 +6,7 @@ class UtilitiesController < ApplicationController
 
   def whatsapp
   end
+
+  def mercagopago
+  end
 end

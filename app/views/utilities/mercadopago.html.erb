@@ -1,0 +1,74 @@
+<%= javascript_pack_tag 'hello_vue' %>
+
+
+<div class="row">
+  <div class="col">
+    <div id="app">
+
+      <div class="form-group">
+        <label for="valorEmprestado">Valor emprestado</label>
+        <input v-model="valorEmprestado" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+      <div class="form-group">
+        <label for="valorEmprestado">teste3</label>
+        <input v-model="teste3" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+      <div class="form-group">
+        <label for="valorEmprestado">teste4</label>
+        <input v-model="teste4" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+      <div class="form-group">
+        <label for="valorEmprestado">teste5</label>
+        <input v-model="teste5" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+      <div class="form-group">
+        <label for="valorEmprestado">teste7</label>
+        <input v-model="teste7" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+      <div class="form-group">
+        <label for="valorEmprestado">teste8</label>
+        <input v-model="teste8" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+      <div class="form-group">
+        <label for="valorEmprestado">teste9</label>
+        <input v-model="teste9" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+
+      <div class="form-group">
+        <label for="valorEmprestado">teste10</label>
+        <input v-model="teste10" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+
+      <div class="form-group">
+        <label for="valorEmprestado">teste11</label>
+        <input v-model="teste11" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+      </div>
+
+
+      <p>
+        <strong>Valor passar na máquina:</strong>
+        R$ {{formatPrice(valorEmprestado * 1.1 * 1.0531)}}
+      </p>
+      <p>
+        <strong>PARCELAS</strong>
+        <ul>
+          <li>1x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * 1.0531)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * 1.0531)}})</li>
+          <li>2x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * 1.09617 / 2)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * 1.09617)}})</li>
+          <li>3x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * 1.110074 / 3)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * 1.110074)}})</li>
+          <li>4x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * 1.123657 / 4)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * 1.123657)}})</li>
+          <li>5x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * 1.136926 / 5)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * 1.136926)}})</li>
+          <li>6x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * 1.149996 / 6)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * 1.149996)}})</li>
+        </ul>
+      </p>
+
+    </div>
+  </div>
+</div>
