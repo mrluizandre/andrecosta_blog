@@ -1,8 +1,38 @@
 <%= javascript_pack_tag 'hello_vue' %>
+<style>
+  li {
+    border: 1px solid #ccc;
+    padding: .3em;
+    border-radius: .4em;
+    margin-bottom: 3px;
+    list-style-type: none;
+    margin-left: -4px;
+  }
 
+  ul {
+    padding-left: 0;
+  }
+</style>
 <div id="app">
   <div class="row">
+    <div class="col-12"><h2>Configurações<h2></div>
     <div class="col">
+      <div class="form-group">
+        <label for="lucro">Lucro (%)</label>
+        <input v-model="lucro" type="number" class="form-control" id="lucro" placeholder="Lucro (%)">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="taxaFixa">Taxa fixa Mercado Pago (%)</label>
+        <input v-model="taxaFixa" type="number" class="form-control" id="taxaFixa" placeholder="Taxa fixa Mercado Pago (%)">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <hr>
       <h2>Valor a pegar</h2>
         <div class="form-group">
           <label for="valorEmprestado">Valor emprestado</label>
@@ -10,23 +40,52 @@
         </div>
         <p>
           <strong>Valor passar na máquina:</strong>
-          R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa))}}
+          R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100)))}}
         </p>
         <p>
           <strong>PARCELAS</strong>
           <ul>
-            <li>1x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa1))}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa1))}})</li>
-            <li>2x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa2) / 2)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa2) / 2)}})</li>
-            <li>3x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa3) / 3)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa3) / 3)}})</li>
-            <li>4x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa4) / 4)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa4) / 4)}})</li>
-            <li>5x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa5) / 5)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa5) / 5)}})</li>
-            <li>6x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa6) / 6)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa6) / 6)}})</li>
-            <li>7x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa7) / 7)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa7) / 7)}})</li>
-            <li>8x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa8) / 8)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa8) / 8)}})</li>
-            <li>9x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa9) / 9)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa9) / 9)}})</li>
-            <li>10x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa10) / 10)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa10) / 10)}})</li>
-            <li>11x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa11) / 11)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa11) / 11)}})</li>
-            <li>12x de <strong>R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa12) / 12)}}</strong> - (R$ {{formatPrice(valorEmprestado * 1.1 * (1 + taxaFixa + taxa12) / 12)}})</li>
+            <li>1x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa1))}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa1))}}</li>
+            <li>2x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa2) / 2)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa2))}}</li>
+            <li>3x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa3) / 3)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa3))}}</li>
+            <li>4x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa4) / 4)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa4))}}</li>
+            <li>5x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa5) / 5)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa5))}}</li>
+            <li>6x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa6) / 6)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa6))}}</li>
+            <li>7x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa7) / 7)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa7))}}</li>
+            <li>8x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa8) / 8)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa8))}}</li>
+            <li>9x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa9) / 9)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa9))}}</li>
+            <li>10x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa10) / 10)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa10))}}</li>
+            <li>11x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa11) / 11)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa11))}}</li>
+            <li>12x de <strong>R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa12) / 12)}}</strong> <br> Tem que ter limite de R$ {{formatPrice(valorEmprestado * (1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa12))}}</li>
+          </ul>
+        </p>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <hr>
+      <h2>Limite Disponível</h2>
+        <div class="form-group">
+          <label for="valorEmprestado">Limite disponível</label>
+          <input v-model="limiteDisponivel" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
+        </div>
+        <p>
+          <strong>PARCELAS</strong>
+          <ul>
+            <li>1x de <strong>R$ {{formatPrice(limiteDisponivel)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa1)))}}</li>
+            <li>2x de <strong>R$ {{formatPrice(limiteDisponivel / 2)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa2)))}}</li>
+            <li>3x de <strong>R$ {{formatPrice(limiteDisponivel / 3)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa3)))}}</li>
+            <li>4x de <strong>R$ {{formatPrice(limiteDisponivel / 4)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa4)))}}</li>
+            <li>5x de <strong>R$ {{formatPrice(limiteDisponivel / 5)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa5)))}}</li>
+            <li>6x de <strong>R$ {{formatPrice(limiteDisponivel / 6)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa6)))}}</li>
+            <li>7x de <strong>R$ {{formatPrice(limiteDisponivel / 7)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa7)))}}</li>
+            <li>8x de <strong>R$ {{formatPrice(limiteDisponivel / 8)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa8)))}}</li>
+            <li>9x de <strong>R$ {{formatPrice(limiteDisponivel / 9)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa9)))}}</li>
+            <li>10x de <strong>R$ {{formatPrice(limiteDisponivel / 10)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa10)))}}</li>
+            <li>11x de <strong>R$ {{formatPrice(limiteDisponivel / 11)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa11)))}}</li>
+            <li>12x de <strong>R$ {{formatPrice(limiteDisponivel / 12)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa12)))}}</li>
+            
           </ul>
         </p>
 

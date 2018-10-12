@@ -11,8 +11,10 @@ document.addEventListener('turbolinks:load', () => {
   var app = new Vue({
     el: '#app',
     data: {
-      valorEmprestado: 10000,
-      taxaFixa: 0.0531,
+      valorEmprestado: 0,
+      limiteDisponivel: 0,
+      lucro: 10,
+      taxaFixa: 5.31,
       taxa1:0,
       taxa2:0.043071,
       taxa3: 0.056974,
