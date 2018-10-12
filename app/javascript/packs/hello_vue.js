@@ -12,15 +12,19 @@ document.addEventListener('turbolinks:load', () => {
     el: '#app',
     data: {
       valorEmprestado: 10000,
-      teste3: 1.15,
-      teste4: 1.15,
-      teste5: 1.15,
-      teste7: 1.15,
-      teste8: 1.15,
-      teste9: 1.15,
-      teste10: 1.15,
-      teste11: 1.15,
-      teste11: 1.15,
+      taxaFixa: 0.0531,
+      taxa1:0,
+      taxa2:0.043071,
+      taxa3: 0.056974,
+      taxa4: 0.070557,
+      taxa5: 0.083826,
+      taxa6: 0.096896,
+      taxa7: 0.109626,
+      taxa8: 0.122267,
+      taxa9: 0.134588,
+      taxa10: 0.146594,
+      taxa11: 0.15849,
+      taxa12: 0.170067
     },
     methods: {
     formatPrice(value) {
