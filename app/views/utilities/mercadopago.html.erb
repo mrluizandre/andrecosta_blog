@@ -34,6 +34,7 @@
     <div class="col">
       <hr>
       <h2>Valor a pegar</h2>
+        <em>Faz o cálculo basedo no valor que a pessoa quer pegar emprestado.</em>
         <div class="form-group">
           <label for="valorEmprestado">Valor emprestado</label>
           <input v-model="valorEmprestado" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
@@ -66,6 +67,7 @@
     <div class="col">
       <hr>
       <h2>Limite Disponível</h2>
+        <em>Faz o cálculo basedo no valor que a pessoa tem de limite no cartão.</em>
         <div class="form-group">
           <label for="valorEmprestado">Limite disponível</label>
           <input v-model="limiteDisponivel" type="number" class="form-control" id="valorEmprestado" placeholder="Valor que o cliente vai pegar">
@@ -85,7 +87,7 @@
             <li>10x de <strong>R$ {{formatPrice(limiteDisponivel / 10)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa10)))}}</li>
             <li>11x de <strong>R$ {{formatPrice(limiteDisponivel / 11)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa11)))}}</li>
             <li>12x de <strong>R$ {{formatPrice(limiteDisponivel / 12)}}</strong> <br> Empréstimo de R$ {{formatPrice(limiteDisponivel / ((1 + (lucro/100)) * (1 + (taxaFixa/100) + taxa12)))}}</li>
-            
+
           </ul>
         </p>
 
