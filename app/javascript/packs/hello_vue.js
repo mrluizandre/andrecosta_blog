@@ -14,7 +14,7 @@ document.addEventListener('turbolinks:load', () => {
       valorEmprestado: 0,
       limiteDisponivel: 0,
       lucro: 10,
-      taxaFixa: 5.31,
+      taxaFixa: 5.7,
       taxa1:0,
       taxa2:0.043071,
       taxa3: 0.056974,
