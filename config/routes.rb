@@ -18,6 +18,7 @@
 
   get 'whatsapp', to: 'utilities#whatsapp', as: 'open_whatsapp_number'
   get 'mercadopago', to: 'utilities#mercadopago', as: 'mercadopago'
+  get 'amorexigente_certificado', to: 'utilities#amorexigente_certificado', as: 'amorexigente_certificado'
   devise_for :users
   resources :posts do
     collection do

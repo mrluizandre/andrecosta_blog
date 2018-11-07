@@ -1,0 +1,2 @@
+class AmorExigenteSubscriber < ApplicationRecord
+end

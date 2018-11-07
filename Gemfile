@@ -54,3 +54,5 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'chartkick', '~> 3.0', '>= 3.0.1'
 
 gem 'webpacker'
+
+gem 'prawn-rails'
