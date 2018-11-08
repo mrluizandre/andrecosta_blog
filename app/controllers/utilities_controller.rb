@@ -21,15 +21,9 @@ class UtilitiesController < ApplicationController
     if subscriber.present?
       GeneratePdf::certificado(subscriber,cpf)
       url_resposta = "#{root_url}#{cpf.gsub(/\D+/, '')}.pdf"
-      respond_to do |format|
-        format.html
-        format.json { render json: {url: url_resposta}.to_json }
-      end
+      render text: {url: url_resposta}.to_json }
     else
-      respond_to do |format|
-        format.html
-        format.json { render json: {error: 'Inscrito não encontrado'}.to_json, status: :not_found }
-      end
+      render text: {error: 'Inscrito não encontrado'}.to_json, status: :not_found
     end
   end
 end
