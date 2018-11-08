@@ -56,3 +56,4 @@ gem 'chartkick', '~> 3.0', '>= 3.0.1'
 gem 'webpacker'
 
 gem 'prawn-rails'
+gem 'rack-cors'
