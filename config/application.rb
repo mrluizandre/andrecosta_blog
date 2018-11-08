@@ -16,7 +16,7 @@ module AndrecostaBlog
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '/amorexigente_certificado', :headers => :any, :methods => [:get, :post, :options]
+        resource '/amorexigente_certificado.json', :headers => :any, :methods => [:get, :post, :options]
       end
     end
 
