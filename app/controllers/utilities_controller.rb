@@ -23,12 +23,12 @@ class UtilitiesController < ApplicationController
       url_resposta = "#{root_url}#{cpf.gsub(/\D+/, '')}.pdf"
       respond_to do |format|
         format.html
-        format.json { render json: {url: url_resposta} }
+        format.json { render json: {url: url_resposta}.to_json }
       end
     else
       respond_to do |format|
         format.html
-        format.json { render json: {error: 'Inscrito não encontrado'}, status: :not_found }
+        format.json { render json: {error: 'Inscrito não encontrado'}.to_json, status: :not_found }
       end
     end
   end
