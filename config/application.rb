@@ -13,6 +13,13 @@ module AndrecostaBlog
     config.i18n.default_locale = 'pt-BR'
     config.time_zone = 'Brasilia'
 
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '/amorexigente_certificado', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
