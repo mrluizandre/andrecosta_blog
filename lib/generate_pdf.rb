@@ -13,10 +13,15 @@ module GeneratePdf
   def self.certificado subscriber, cpf
     # Apenas uma string aleatório para termos um corpo de texto pro contrato
     texto1 = "Certificamos que"
-    texto2 = "<b>#{subscriber.name.upcase}</b>"
+    texto2 = "#{subscriber.name.titleize}"
     texto3 = "portador(a) do CPF nº <b>#{cpf}</b>, participou do XIII ENCONTRO REGIONAL DO AMOR-EXIGENTE, com o tema \"RELAÇÕES FAMILIARES: VIVENDO EMOÇÕES E SENTIMENTOS\", realizado no dia 10 de novembro de 2018, em Goiânia, com carga horária de 08 horas."
 
     Prawn::Document.new(PDF_OPTIONS) do |pdf|
+
+      pdf.font_families.update("Cookie" => {
+        :normal => "#{Rails.root.to_s}/app/assets/fonts/Cookie-Regular.ttf"
+      })
+
       bg_image = "#{Rails.root.to_s}/app/assets/images/certificado2.jpg"
 
       pdf.image bg_image, at: [-75,555], :scale => 0.2833
@@ -33,9 +38,10 @@ module GeneratePdf
       # Escreve o texto do contrato com o tamanho de 14 PDF points, com o alinhamento justify
       pdf.text "#{texto1}", :size => 12, :align => :justify, :inline_format => true, leading: 5
 
-      pdf.move_down 10
-
-      pdf.text "#{texto2}", :size => 22, :align => :center, :style => :bold, :inline_format => true, leading: 5
+      pdf.move_up 5
+      pdf.font("Cookie")
+      pdf.text "#{texto2}", :size => 42, :align => :center, leading: 5
+      pdf.font("Helvetica")
 
       pdf.move_down 10
 
